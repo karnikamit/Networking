@@ -21,12 +21,12 @@ class IPClass(object):
         ip_address.strip()
         octates = ip_address.split('.')
         if not octates:
-            raise TypeError("ip_address given is not is proper format or empty")
+            raise TypeError("ip_address given is not in proper format or empty")
 
-        first_octate = int(octates[0]) if octates[0] else ""
+        first_octet = int(octates[0]) if octates[0] else ""
         for ipClass in self.ip_address_classes:
-            ip_octate_range = self.ip_address_classes[ipClass]
-            if ip_octate_range[0] <= first_octate <= ip_octate_range[1]:
+            ip_octet_range = self.ip_address_classes[ipClass]
+            if ip_octet_range[0] <= first_octet <= ip_octet_range[1]:
                 return ipClass
         else:
-            return "Octate not in range"
+            return "Octet not in range"
