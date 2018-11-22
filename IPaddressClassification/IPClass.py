@@ -20,7 +20,7 @@ class IPClass(object):
         """
         ip_address.strip()
         octates = ip_address.split('.')
-        if not octates:
+        if not octates.__len__() == 4:
             raise TypeError("ip_address given is not in proper format or empty")
 
         first_octet = int(octates[0]) if octates[0] else ""
